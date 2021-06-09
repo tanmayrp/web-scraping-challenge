@@ -70,7 +70,7 @@ def scrape():
 
     # Convert dataframe into html table
     html_table = df.to_html()
-    html_table
+    html_table = html_table.replace('\n','')
 
     ##################################################
     # Mars Hemispheres

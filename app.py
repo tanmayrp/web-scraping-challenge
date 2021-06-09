@@ -24,10 +24,10 @@ def home():
 def scrape():
 
     # Get the dictionary from the scrape_mars python script
-    mars_info_dictionary = scrape_mars.scrape()
+    mars_data = scrape_mars.scrape()
 
     # Update the Mongo database using update and upsert=True
-    mongo.db.collection.update({}, mars_info_dictionary, upsert=True)
+    mongo.db.collection.update({}, mars_data, upsert=True)
 
     # Redirect back to home page
     return redirect("/")
