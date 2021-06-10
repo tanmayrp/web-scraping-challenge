@@ -67,9 +67,10 @@ def scrape():
     df=df.rename(columns={0: "Description", 1:"Mars",2:"Earth"})
     df = df.reset_index(drop=True)
     df.drop(index=df.index[0], axis=0, inplace=True)
+    final_df = df.set_index('Description')
 
     # Convert dataframe into html table
-    html_table = df.to_html()
+    html_table = final_df.to_html()
     html_table = html_table.replace('\n','')
 
     ##################################################
