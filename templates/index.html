@@ -39,10 +39,8 @@
                 <img src="{{mars.featured_image_url}}" alt="Featured Mars Image">
             </div>
             <div class="col-md-4">
-                <h2>Mars Facts</h2>
-                <div class="card">
-                    {{ mars.html_table | safe}}
-                </div>
+                <h2>Mars Facts</h2><br>
+                {{ mars.html_table | safe}}
             </div>
         </div>
         <hr>

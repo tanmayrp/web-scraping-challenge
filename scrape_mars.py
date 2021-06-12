@@ -70,7 +70,7 @@ def scrape():
     final_df = df.set_index('Description')
 
     # Convert dataframe into html table
-    html_table = final_df.to_html()
+    html_table = final_df.to_html(classes='table table-striped table-bordered')
     html_table = html_table.replace('\n','')
 
     ##################################################
@@ -116,6 +116,7 @@ def scrape():
         except Exception as e:
             print(e)
 
+    # Store data in a dictionary
     mars_info_dictionary = {
         "news_title" : news_title,
         "news_p" : news_p,
@@ -124,5 +125,8 @@ def scrape():
         "hemisphere_image_urls" : hemisphere_image_urls
     }
 
+    # Close the browser after scraping
     browser.quit()
+    
+    # Return results
     return mars_info_dictionary
